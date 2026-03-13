@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://d1ouhfe15cmcx"]
+
+[ext_resource type="Script" uid="uid://baqh2v4mxehnh" path="res://Scripts/Main.cs" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://6u0mm74umb3k" path="res://Scenes/map1.tscn" id="2_8gbba"]
+[ext_resource type="PackedScene" uid="uid://ca67vpkpbb5yj" path="res://Scenes/charTest.tscn" id="3_jjvhh"]
+
+[node name="Main" type="Node2D" unique_id=1131418494]
+script = ExtResource("1_jjgbg")
+
+[node name="TileMapLayer" parent="." unique_id=404325711 instance=ExtResource("2_8gbba")]
+
+[node name="CharacterBody2D" parent="." unique_id=1452036997 instance=ExtResource("3_jjvhh")]
+position = Vector2(276, 185)
+scale = Vector2(0.5, 0.5)
+
+[node name="CharacterBody2D2" parent="." unique_id=1416814297 instance=ExtResource("3_jjvhh")]
+position = Vector2(372, 178)
+scale = Vector2(0.5, 0.5)
+
+[node name="CharacterBody2D3" parent="." unique_id=60091754 instance=ExtResource("3_jjvhh")]
+position = Vector2(149, 166)
+scale = Vector2(0.5, 0.5)
+
+[node name="CharacterBody2D4" parent="." unique_id=1278401887 instance=ExtResource("3_jjvhh")]
+position = Vector2(254, 114)
+scale = Vector2(0.5, 0.5)
