@@ -9,4 +9,13 @@ public struct Stats
 	int dex;
 	int wis;
 	int intel;
+
+	Stats(int str,int con, int dex, int wis, int intel)
+	{
+		this.str = str;
+		this.constitution = con;
+		this.dex = dex;
+		this.wis = wis;
+		this.intel = intel;
+	}
 }
