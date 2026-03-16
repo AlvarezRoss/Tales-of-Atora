@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dv1q7xsicsn63"]
+
+[ext_resource type="Texture2D" uid="uid://cshn3e18k1uok" path="res://Assets/Female_4/Medieval_Interiors_Premade_Female_4_idle1.png" id="1_dq4hf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eohwy"]
+atlas = ExtResource("1_dq4hf")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wmiq"]
+atlas = ExtResource("1_dq4hf")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uum3x"]
+atlas = ExtResource("1_dq4hf")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jbs63"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eohwy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3wmiq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uum3x")
+}],
+"loop": true,
+"name": &"IdleFront",
+"speed": 5.0
+}]
+
+[node name="FemaleMage" type="AnimatedSprite2D" unique_id=2069425941]
+sprite_frames = SubResource("SpriteFrames_jbs63")
+animation = &"IdleFront"
+autoplay = "IdleFront"
+frame_progress = 0.041744873

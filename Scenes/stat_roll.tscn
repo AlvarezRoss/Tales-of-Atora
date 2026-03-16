@@ -19,15 +19,15 @@ offset_bottom = 648.0
 
 [node name="RollForStats" type="Button" parent="CanvasLayer" unique_id=1579357848]
 texture_filter = 1
-anchors_preset = 7
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.77500004
 anchor_right = 0.5
-anchor_bottom = 1.0
+anchor_bottom = 0.77500004
 offset_left = -53.5
-offset_top = -161.0
+offset_top = -15.200012
 offset_right = 53.5
-offset_bottom = -130.0
+offset_bottom = 15.799988
 grow_horizontal = 2
 grow_vertical = 0
 text = "Roll for Stats"
@@ -339,3 +339,22 @@ action_mode = 0
 [node name="CharButton" type="CheckButton" parent="CanvasLayer/+1VBoxContainer" unique_id=124893504]
 layout_mode = 2
 action_mode = 0
+
+[node name="CharacterPanel" type="Panel" parent="CanvasLayer" unique_id=1155786296]
+anchors_preset = -1
+anchor_left = 0.20700002
+anchor_top = 0.532
+anchor_right = 0.20700002
+anchor_bottom = 0.532
+offset_left = -68.46402
+offset_top = -162.736
+offset_right = 66.53598
+offset_bottom = 15.264008
+
+[node name="CharNextButton" type="Button" parent="CanvasLayer" unique_id=1966460907]
+texture_filter = 1
+offset_left = 212.0
+offset_top = 377.0
+offset_right = 257.0
+offset_bottom = 408.0
+text = "Next"

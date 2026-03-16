@@ -31,7 +31,12 @@ public partial class StatRoll : Control
 	/*These booleans will be used in the button press function for the ability bonuses
 	 The idea is to create a flag so we know if we need to disable to enable all other buttons*/
 	bool plusTwoPressed = false;
-	bool plusOnePressed = false;	
+	bool plusOnePressed = false;
+
+	Panel characterPanel; //Panel to be used to display the character options
+	Node2D[] characterSprites; // character modles will be added as Node then we access the aniamted sprite with the GetChild function
+	Button characterNextButton;
+	int spriteIndex;
 
 	public override void _Ready()
 	{
@@ -39,6 +44,10 @@ public partial class StatRoll : Control
 		rollForStatsButton = canvas.GetNode<Button>("RollForStats");
 		statGrid = canvas.GetNode<GridContainer>("StatGridContainer");
 		rollForStatsButton.ButtonDown += RollForStats;
+
+		characterPanel = canvas.GetNode<Panel>("CharacterPanel");
+		characterNextButton = canvas.GetNode<Button>("CharNextButton");
+		characterNextButton.ButtonDown += IncreaseSpriteIndex;
 
 		/*Gets pointer to Ability Score Labels*/
 		strLabel = statGrid.GetNode<Panel>("StrValuePanel").GetNode<Label>("StrValueLabel");
@@ -88,6 +97,24 @@ public partial class StatRoll : Control
 			else break;
 		}
 
+		////// Loads Animated Sprites
+
+		PackedScene femHealerScene = ResourceLoader.Load<PackedScene>("res://Scenes/CharacterSprites/female_healer.tscn");
+		PackedScene femMageScene = ResourceLoader.Load<PackedScene>("res://Scenes/CharacterSprites/female_mage.tscn");
+		PackedScene maleRogueScene = ResourceLoader.Load<PackedScene>("res://Scenes/CharacterSprites/male_rogue.tscn");
+
+		Node2D femHealerNode = femHealerScene.Instantiate<Node2D>();
+		Node2D femMageNode = femMageScene.Instantiate<Node2D>();
+		Node2D maleRogueNode = maleRogueScene.Instantiate<Node2D>();
+
+		characterSprites = new Node2D[3];
+		characterSprites[0] = femHealerNode;
+		characterSprites[1] = femMageNode;
+		characterSprites[2] = maleRogueNode;
+		spriteIndex = 0;
+
+		LoadCharacterSprite(spriteIndex);
+
 		
 	}
 
@@ -100,7 +127,7 @@ public partial class StatRoll : Control
 	{
 		for (int i = 0; i < labels.Length; i++)
 		{
-			labels[i].Text = randomNumGen.Next(4,13).ToString();
+			labels[i].Text = randomNumGen.Next(4,16).ToString();
 		}
 		EnableButtons();
 	}
@@ -111,7 +138,7 @@ public partial class StatRoll : Control
 		{
 			for (int i = 0; i<plusTwoButtons.Length;i++)
 			{
-				if (plusTwoButtons[i].ButtonPressed == true) UpdateScores(i, true, false);
+				if (plusTwoButtons[i].Disabled == false) UpdateScores(i, true, false);
 				plusTwoButtons[i].Disabled = false;
 			}
 			plusTwoPressed = false;
@@ -138,6 +165,7 @@ public partial class StatRoll : Control
         {
             for (int i = 0; i < plusOneButtons.Length; i++)
             {
+				if (plusOneButtons[i].Disabled == false) UpdateScores(i, false, false);
                 plusOneButtons[i].Disabled = false;
             }
             plusOnePressed = false;
@@ -150,6 +178,7 @@ public partial class StatRoll : Control
                 if (plusOneButtons[i].ButtonPressed)
                 {
                     buttonPressed = plusOneButtons[i];
+					UpdateScores(i, false, true);
                     continue;
                 }
                 plusOneButtons[i].Disabled = true;
@@ -170,19 +199,43 @@ public partial class StatRoll : Control
 	private void UpdateScores(int buttonIndex, bool plusTwo, bool buttonPress)
 	{
 		int newValue;
-		if (plusTwo)
-		{
-			Label label = statGrid.GetChild<Panel>(buttonIndex + 3).GetChild<Label>(0);
-			int currentValue = label.Text.ToInt();
+		Label label;
+		int currentValue;
+		int bonus = 0;
+		if (plusTwo) bonus = 2;
+		else if (!plusTwo) bonus = 1;
+		
+		
+			label = statGrid.GetChild<Panel>(buttonIndex * 2 + 1).GetChild<Label>(0);
+			currentValue = label.Text.ToInt();
 			if (buttonPress)
 			{
-                newValue = currentValue + 2;
+                newValue = currentValue + bonus;
             }
 			else
 			{
-				newValue = currentValue - 2;
+				newValue = currentValue - bonus;
 			}
 			label.Text = newValue.ToString();
+		
+	}
+
+	private void LoadCharacterSprite(int spriteNum)
+	{
+		foreach (Node2D child in characterPanel.GetChildren())
+		{
+			characterPanel.RemoveChild(child);
+			child.Hide();
 		}
+		characterPanel.AddChild(characterSprites[spriteNum]);
+        characterSprites[spriteNum].Position = characterPanel.Size / 2;
+		characterSprites[spriteNum].Show();
+    }
+
+	private void IncreaseSpriteIndex()
+	{
+		spriteIndex++;
+		if (spriteIndex > 2) spriteIndex = 0; 
+		LoadCharacterSprite(spriteIndex);
 	}
 }

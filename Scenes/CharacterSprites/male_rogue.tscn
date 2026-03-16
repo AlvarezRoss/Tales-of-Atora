@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cl77m8ssqcnvb"]
+
+[ext_resource type="Texture2D" uid="uid://dwxw7lrg7jowa" path="res://Assets/Male_5/Medieval_Interiors_Premade_Male_5_idle1.png" id="1_4wq8v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6v8k"]
+atlas = ExtResource("1_4wq8v")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojny6"]
+atlas = ExtResource("1_4wq8v")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4h26e"]
+atlas = ExtResource("1_4wq8v")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ntvvk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6v8k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojny6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4h26e")
+}],
+"loop": true,
+"name": &"IdleFront",
+"speed": 5.0
+}]
+
+[node name="male_rogue" type="AnimatedSprite2D" unique_id=744046025]
+sprite_frames = SubResource("SpriteFrames_ntvvk")
+animation = &"IdleFront"
+autoplay = "IdleFront"
+frame_progress = 0.2644716
