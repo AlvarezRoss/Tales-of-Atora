@@ -38,6 +38,8 @@ public partial class StatRoll : Control
 	Button characterNextButton;
 	int spriteIndex;
 
+	Button saveButton;
+
 	public override void _Ready()
 	{
 		canvas = GetNode<CanvasLayer>("CanvasLayer");
@@ -48,6 +50,9 @@ public partial class StatRoll : Control
 		characterPanel = canvas.GetNode<Panel>("CharacterPanel");
 		characterNextButton = canvas.GetNode<Button>("CharNextButton");
 		characterNextButton.ButtonDown += IncreaseSpriteIndex;
+
+		saveButton = canvas.GetNode<Button>("SaveButton");
+		saveButton.ButtonDown += SaveButtonClick;
 
 		/*Gets pointer to Ability Score Labels*/
 		strLabel = statGrid.GetNode<Panel>("StrValuePanel").GetNode<Label>("StrValueLabel");
@@ -237,5 +242,19 @@ public partial class StatRoll : Control
 		spriteIndex++;
 		if (spriteIndex > 2) spriteIndex = 0; 
 		LoadCharacterSprite(spriteIndex);
+	}
+
+	private void SaveButtonClick()
+	{
+		PackedScene mainLevel = ResourceLoader.Load<PackedScene>("res://Scenes/main.tscn");
+		PackedScene characterScene = ResourceLoader.Load<PackedScene>("res://Scenes/charTest.tscn");
+		AnimatedSprite2D characterSprite = (AnimatedSprite2D)characterSprites[spriteIndex];
+		characterStats = new Stats(labels[0].Text.ToInt(), labels[1].Text.ToInt(), labels[2].Text.ToInt(), labels[3].Text.ToInt(), labels[4].Text.ToInt(), labels[5].Text.ToInt());
+        characterPanel.RemoveChild(characterSprite); // removes the sprite from its parent so it can be loaded to the main scene
+		Char newCharacter = characterScene.Instantiate<Char>();
+		newCharacter.Init(characterStats, characterSprite.SpriteFrames);
+		Node mainLevelInsrance = mainLevel.Instantiate();
+		mainLevelInsrance.AddChild(newCharacter);
+		GetTree().ChangeSceneToNode(mainLevelInsrance);
 	}
 }
