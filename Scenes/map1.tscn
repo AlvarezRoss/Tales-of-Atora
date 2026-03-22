@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://6u0mm74umb3k"]
 
-[ext_resource type="Texture2D" uid="uid://bixnvvll8bk4w" path="res://Assets/Town-Country+Interiors/Medieval Interiors/Medieval_Interiors_Tiles/A4_Medieval_Interior.png" id="1_4pqaf"]
+[ext_resource type="Texture2D" uid="uid://bixnvvll8bk4w" path="res://Assets/Buildings/A4_Medieval_Interior.png" id="1_4pqaf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fvxu6"]
 texture = ExtResource("1_4pqaf")
