@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://djdnxbgsb5mvn"]
+
+[ext_resource type="Script" uid="uid://dnrna6pe85c7v" path="res://Scripts/main_menu.gd" id="1_1ehe0"]
+[ext_resource type="Texture2D" uid="uid://f6fyh873svr2" path="res://Assets/GUI/Game Menu/1x/Asset 1 - 1080p.png" id="1_28flt"]
+[ext_resource type="Texture2D" uid="uid://cbo40reqgefii" path="res://Assets/GUI/Game Menu/1x/Asset 8 - 1080p.png" id="2_48xlc"]
+
+[node name="MainMenu" type="Control" unique_id=493980682]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1ehe0")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1909555150]
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=833369429]
+offset_right = 1152.0
+offset_bottom = 645.0
+
+[node name="MenuPanel" type="Panel" parent="CanvasLayer" unique_id=1861429623]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -147.5
+offset_top = -215.5
+offset_right = 147.5
+offset_bottom = 215.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9312649, 1)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/MenuPanel" unique_id=330990727]
+position = Vector2(144.11787, 230.00002)
+scale = Vector2(0.53824645, 0.60023445)
+texture = ExtResource("1_28flt")
+
+[node name="NewChar" type="Sprite2D" parent="CanvasLayer" unique_id=829080818]
+position = Vector2(566.99994, 280)
+scale = Vector2(0.4556315, 0.42978713)
+texture = ExtResource("2_48xlc")
+
+[node name="Button" type="Button" parent="CanvasLayer/NewChar" unique_id=1588925997]
+anchors_preset = -1
+anchor_left = 0.504
+anchor_top = 0.541
+anchor_right = 0.504
+anchor_bottom = 0.541
+offset_left = -402.88684
+offset_top = -145.74884
+offset_right = -183.41125
+offset_bottom = -95.34778
+grow_horizontal = 2
+grow_vertical = 2
+text = "New Character"
+flat = true
+
+[node name="Quit" type="Sprite2D" parent="CanvasLayer" unique_id=422604107]
+position = Vector2(566.99994, 409.00003)
+scale = Vector2(0.4556315, 0.42978713)
+texture = ExtResource("2_48xlc")
+
+[node name="Button" type="Button" parent="CanvasLayer/Quit" unique_id=938940167]
+anchors_preset = -1
+anchor_left = 0.504
+anchor_top = 0.541
+anchor_right = 0.504
+anchor_bottom = 0.541
+offset_left = -402.88684
+offset_top = -145.74884
+offset_right = -183.41125
+offset_bottom = -95.34778
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quit
+"
+flat = true
+
+[connection signal="pressed" from="CanvasLayer/NewChar/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Quit/Button" to="." method="_on_quit_button_pressed"]
