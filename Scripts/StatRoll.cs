@@ -253,8 +253,9 @@ public partial class StatRoll : Control
         characterPanel.RemoveChild(characterSprite); // removes the sprite from its parent so it can be loaded to the main scene
 		Char newCharacter = characterScene.Instantiate<Char>();
 		newCharacter.Init(characterStats, characterSprite.SpriteFrames);
-		Node mainLevelInsrance = mainLevel.Instantiate();
+		Main mainLevelInsrance = (Main)mainLevel.Instantiate();
 		mainLevelInsrance.AddChild(newCharacter);
+		mainLevelInsrance.AddPlayer(newCharacter);
 		GetTree().ChangeSceneToNode(mainLevelInsrance);
 	}
 }
