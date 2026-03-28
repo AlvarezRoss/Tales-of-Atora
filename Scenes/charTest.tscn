@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cxdqn1opt3soc" path="res://Scripts/Char.cs" id="1_rwdqo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rwdqo"]
-size = Vector2(106, 83)
+size = Vector2(83, 60)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4lthv"]
 size = Vector2(70, 61)
@@ -12,7 +12,7 @@ size = Vector2(70, 61)
 script = ExtResource("1_rwdqo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1103847913]
-position = Vector2(1, 1.5)
+position = Vector2(0, 12)
 shape = SubResource("RectangleShape2D_rwdqo")
 
 [node name="ClickArea" type="Area2D" parent="." unique_id=260759957]
@@ -23,3 +23,5 @@ position = Vector2(-2, -1.5)
 shape = SubResource("RectangleShape2D_4lthv")
 
 [node name="CharSprite" type="AnimatedSprite2D" parent="." unique_id=1489108373]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1603481626]

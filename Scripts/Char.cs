@@ -1,12 +1,13 @@
 using Godot;
 using System;
-
+[GlobalClass]
 public partial class Char : CharacterBody2D
 {
 	// Called when the node enters the scene tree for the first time.
 	[Export]
 	public int speed = 300;
 	public Vector2 movementTarget;
+	[Export]
 	public bool selected; // Bool used to indentify which NPCs are selected and which aren't
 	bool moving;
 	Area2D clickArea;
@@ -68,7 +69,7 @@ public partial class Char : CharacterBody2D
 		if (@event.IsActionPressed("RightClick") && selected)
 		{
 			moving = true;
-			movementTarget = GetViewport().GetMousePosition();
+			movementTarget = GetGlobalMousePosition();
             movementDirection = GetDirection(); // We do it here to set the movement direction once
         }
     }
