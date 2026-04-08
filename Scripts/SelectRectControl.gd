@@ -27,8 +27,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if dragging:
 		var drag_end: Vector2 = get_global_mouse_position()
 		select_rect = Rect2(drag_start,drag_end - drag_start).abs()
-		queue_redraw()
-		
+		queue_redraw
 func _draw() -> void:
 	if dragging:
 		draw_rect(select_rect,Color(0,0.5,1,0.3),true)
