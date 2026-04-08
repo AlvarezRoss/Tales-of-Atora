@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://bf2r3s67oj224"]
+
+[ext_resource type="Texture2D" uid="uid://cbo40reqgefii" path="res://Assets/GUI/Game Menu/1x/Asset 8 - 1080p.png" id="1_nhljp"]
+
+[node name="Control" type="Control" unique_id=131510360]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=129273989]
+
+[node name="SceneLoadPanel" type="Panel" parent="CanvasLayer" unique_id=923748761]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = -1
+anchor_left = 0.102000006
+anchor_top = 0.15900001
+anchor_right = 0.102000006
+anchor_bottom = 0.15900001
+offset_left = 39.495995
+offset_top = -7.689003
+offset_right = 408.496
+offset_bottom = 477.666
+
+[node name="ElfButtonSprite" type="Sprite2D" parent="CanvasLayer/SceneLoadPanel" unique_id=731865160]
+position = Vector2(281, 103.657)
+scale = Vector2(0.31399316, 0.532249)
+texture = ExtResource("1_nhljp")
+
+[node name="Button" type="Button" parent="CanvasLayer/SceneLoadPanel/ElfButtonSprite" unique_id=929458280]
+texture_filter = 1
+offset_left = -25.478264
+offset_top = -7.5152807
+offset_right = 39.521736
+offset_bottom = 23.484718
+size_flags_horizontal = 4
+text = "Elf"
+flat = true
+
+[node name="HumanButtonSprite" type="Sprite2D" parent="CanvasLayer/SceneLoadPanel" unique_id=2044141301]
+position = Vector2(79, 103.657005)
+scale = Vector2(0.31399316, 0.532249)
+texture = ExtResource("1_nhljp")
+
+[node name="Button" type="Button" parent="CanvasLayer/SceneLoadPanel/HumanButtonSprite" unique_id=1382632547]
+texture_filter = 1
+offset_left = -25.478264
+offset_top = -7.5152807
+offset_right = 39.521736
+offset_bottom = 23.484718
+size_flags_horizontal = 4
+text = "Human"
+flat = true
+
+[node name="Panel" type="Panel" parent="CanvasLayer/SceneLoadPanel" unique_id=168270184]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.5
+offset_top = -82.349
+offset_right = 180.5
+offset_bottom = 82.349
+grow_horizontal = 2
+grow_vertical = 2
