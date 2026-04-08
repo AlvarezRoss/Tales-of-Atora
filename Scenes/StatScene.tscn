@@ -1,0 +1,358 @@
+[gd_scene format=3 uid="uid://coquiiapn24h1"]
+
+[ext_resource type="Script" uid="uid://cltn0lrfo7hlr" path="res://Scripts/StatScene.cs" id="1_xts8u"]
+
+[node name="Control" type="Control" unique_id=426201876]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 157.0
+offset_top = 95.343
+offset_right = -626.0
+offset_bottom = -67.302
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xts8u")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=693463665]
+
+[node name="SceneLoadPanel" type="Panel" parent="CanvasLayer" unique_id=1579744028]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = -1
+anchor_left = 0.102000006
+anchor_top = 0.15900001
+anchor_right = 0.102000006
+anchor_bottom = 0.15900001
+offset_left = 39.495995
+offset_top = -7.689003
+offset_right = 408.496
+offset_bottom = 477.666
+
+[node name="RollForStats" type="Button" parent="CanvasLayer/SceneLoadPanel" unique_id=774118163]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -27.5
+offset_top = -31.0
+offset_right = 79.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "Roll for Stats"
+
+[node name="StatGridContainer" type="GridContainer" parent="CanvasLayer/SceneLoadPanel" unique_id=729633672]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -156.5
+offset_top = -156.5
+offset_right = 44.5
+offset_bottom = 156.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 1
+theme_override_constants/v_separation = 1
+columns = 2
+
+[node name="StrPanel" type="Panel" parent="CanvasLayer/SceneLoadPanel/StatGridContainer" unique_id=975925853]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/SceneLoadPanel/StatGridContainer/StrPanel" unique_id=1324212013]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.5
+offset_top = -24.25
+offset_right = 50.5
+offset_bottom = 24.25
+grow_horizontal = 2
+grow_vertical = 2
+text = "Strength"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="StrValuePanel" type="Panel" parent="CanvasLayer/SceneLoadPanel/StatGridContainer" unique_id=766465806]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+
+[node name="StrValueLabel" type="Label" parent="CanvasLayer/SceneLoadPanel/StatGridContainer/StrValuePanel" unique_id=1360521456]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.625
+anchor_bottom = 0.5
+offset_right = 40.0
+offset_bottom = 23.0
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="DexPanel" type="Panel" parent="CanvasLayer/SceneLoadPanel/StatGridContainer" unique_id=1921762324]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/SceneLoadPanel/StatGridContainer/DexPanel" unique_id=1966525369]
+layout_mode = 0
+offset_right = 98.0
+offset_bottom = 49.5
+text = "Dexterity"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="DexValuePanel" type="Panel" parent="CanvasLayer/SceneLoadPanel/StatGridContainer" unique_id=1944499062]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+
+[node name="DexValueLabel" type="Label" parent="CanvasLayer/SceneLoadPanel/StatGridContainer/DexValuePanel" unique_id=1386108850]
+layout_mode = 0
+offset_right = 102.5
+offset_bottom = 48.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WisPanel" type="Panel" parent="CanvasLayer/SceneLoadPanel/StatGridContainer" unique_id=1906857440]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/SceneLoadPanel/StatGridContainer/WisPanel" unique_id=1214304673]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 47.5
+text = "Wisdom"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="WisValuePanel" type="Panel" parent="CanvasLayer/SceneLoadPanel/StatGridContainer" unique_id=310844045]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+
+[node name="WisValueLabel" type="Label" parent="CanvasLayer/SceneLoadPanel/StatGridContainer/WisValuePanel" unique_id=2063474622]
+layout_mode = 0
+offset_right = 102.5
+offset_bottom = 48.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ConstPanel" type="Panel" parent="CanvasLayer/SceneLoadPanel/StatGridContainer" unique_id=620373713]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/SceneLoadPanel/StatGridContainer/ConstPanel" unique_id=774330495]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.5
+offset_top = -24.25
+offset_right = 50.5
+offset_bottom = 24.25
+grow_horizontal = 2
+grow_vertical = 2
+text = "Constitution"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ConstValuePanel" type="Panel" parent="CanvasLayer/SceneLoadPanel/StatGridContainer" unique_id=1470134099]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+
+[node name="ConstValueLabel" type="Label" parent="CanvasLayer/SceneLoadPanel/StatGridContainer/ConstValuePanel" unique_id=1827685695]
+layout_mode = 0
+offset_right = 102.5
+offset_bottom = 48.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IntPanel" type="Panel" parent="CanvasLayer/SceneLoadPanel/StatGridContainer" unique_id=1618870555]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/SceneLoadPanel/StatGridContainer/IntPanel" unique_id=1736996760]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.5
+offset_top = -24.25
+offset_right = 50.5
+offset_bottom = 24.25
+grow_horizontal = 2
+grow_vertical = 2
+text = "Intelligence"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="IntValuePanel" type="Panel" parent="CanvasLayer/SceneLoadPanel/StatGridContainer" unique_id=912636064]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+
+[node name="IntValueLabel" type="Label" parent="CanvasLayer/SceneLoadPanel/StatGridContainer/IntValuePanel" unique_id=501634721]
+layout_mode = 0
+offset_right = 102.5
+offset_bottom = 48.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CharPanel" type="Panel" parent="CanvasLayer/SceneLoadPanel/StatGridContainer" unique_id=1833178294]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/SceneLoadPanel/StatGridContainer/CharPanel" unique_id=120542217]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.5
+offset_top = -24.25
+offset_right = 50.5
+offset_bottom = 24.25
+grow_horizontal = 2
+grow_vertical = 2
+text = "Charisma"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ChrValuePanel" type="Panel" parent="CanvasLayer/SceneLoadPanel/StatGridContainer" unique_id=95374038]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+
+[node name="ChrValueLabel" type="Label" parent="CanvasLayer/SceneLoadPanel/StatGridContainer/ChrValuePanel" unique_id=1137350835]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.625
+anchor_bottom = 0.5
+offset_right = 40.0
+offset_bottom = 23.0
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="+2 panel" type="Panel" parent="CanvasLayer/SceneLoadPanel" unique_id=300191283]
+layout_mode = 0
+offset_left = 274.0
+offset_top = 65.657
+offset_right = 297.0
+offset_bottom = 86.657
+
+[node name="Label" type="Label" parent="CanvasLayer/SceneLoadPanel/+2 panel" unique_id=282735365]
+texture_filter = 1
+layout_mode = 0
+offset_right = 23.0
+offset_bottom = 23.0
+text = "+2"
+metadata/_edit_use_anchors_ = true
+
+[node name="+1 panel" type="Panel" parent="CanvasLayer/SceneLoadPanel" unique_id=1597056275]
+layout_mode = 0
+offset_left = 321.0
+offset_top = 64.657
+offset_right = 344.0
+offset_bottom = 85.657
+
+[node name="Label" type="Label" parent="CanvasLayer/SceneLoadPanel/+1 panel" unique_id=439211966]
+texture_filter = 1
+layout_mode = 0
+offset_right = 23.0
+offset_bottom = 23.0
+text = "+1"
+metadata/_edit_use_anchors_ = true
+
+[node name="+2VBoxContainer" type="VBoxContainer" parent="CanvasLayer/SceneLoadPanel" unique_id=627641271]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -106.5
+offset_top = -139.5
+offset_right = -62.5
+offset_bottom = 139.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 27
+
+[node name="StrButton" type="CheckButton" parent="CanvasLayer/SceneLoadPanel/+2VBoxContainer" unique_id=1946233893]
+layout_mode = 2
+action_mode = 0
+
+[node name="DexButton" type="CheckButton" parent="CanvasLayer/SceneLoadPanel/+2VBoxContainer" unique_id=1913205538]
+layout_mode = 2
+action_mode = 0
+
+[node name="WisButton" type="CheckButton" parent="CanvasLayer/SceneLoadPanel/+2VBoxContainer" unique_id=1780248986]
+layout_mode = 2
+action_mode = 0
+
+[node name="ConButton" type="CheckButton" parent="CanvasLayer/SceneLoadPanel/+2VBoxContainer" unique_id=943248450]
+layout_mode = 2
+action_mode = 0
+
+[node name="IntButton" type="CheckButton" parent="CanvasLayer/SceneLoadPanel/+2VBoxContainer" unique_id=887708285]
+layout_mode = 2
+action_mode = 0
+
+[node name="CharButton" type="CheckButton" parent="CanvasLayer/SceneLoadPanel/+2VBoxContainer" unique_id=52898139]
+layout_mode = 2
+action_mode = 0
+
+[node name="+1VBoxContainer" type="VBoxContainer" parent="CanvasLayer/SceneLoadPanel" unique_id=1213857737]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -58.5
+offset_top = -139.5
+offset_right = -14.5
+offset_bottom = 139.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 27
+
+[node name="StrButton" type="CheckButton" parent="CanvasLayer/SceneLoadPanel/+1VBoxContainer" unique_id=519016224]
+layout_mode = 2
+action_mode = 0
+
+[node name="DexButton" type="CheckButton" parent="CanvasLayer/SceneLoadPanel/+1VBoxContainer" unique_id=1458230844]
+layout_mode = 2
+action_mode = 0
+
+[node name="WisButton" type="CheckButton" parent="CanvasLayer/SceneLoadPanel/+1VBoxContainer" unique_id=808505996]
+layout_mode = 2
+action_mode = 0
+
+[node name="ConButton" type="CheckButton" parent="CanvasLayer/SceneLoadPanel/+1VBoxContainer" unique_id=993940636]
+layout_mode = 2
+action_mode = 0
+
+[node name="IntButton" type="CheckButton" parent="CanvasLayer/SceneLoadPanel/+1VBoxContainer" unique_id=1913005592]
+layout_mode = 2
+action_mode = 0
+
+[node name="CharButton" type="CheckButton" parent="CanvasLayer/SceneLoadPanel/+1VBoxContainer" unique_id=518808845]
+layout_mode = 2
+action_mode = 0
