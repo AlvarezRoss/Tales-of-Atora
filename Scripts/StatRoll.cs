@@ -18,7 +18,7 @@ public partial class StatRoll : Control
 	Label dexLabel;
 	Label chrLabel;
 
-	Label[] labels;
+	public Label[] labels;
 
 	Random randomNumGen; // to be used in random number generation
 
