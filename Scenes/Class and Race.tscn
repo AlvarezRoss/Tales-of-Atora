@@ -142,18 +142,28 @@ text = "Apperance
 flat = true
 
 [node name="WorkTexture" type="TextureRect" parent="." unique_id=1508387559]
-layout_mode = 0
-offset_left = 64.0
-offset_top = -36.0
-offset_right = 592.0
-offset_bottom = 635.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.056
+anchor_top = -0.056
+anchor_right = 0.056
+anchor_bottom = -0.056
+offset_left = -0.51200104
+offset_top = 0.288002
+offset_right = 527.488
+offset_bottom = 671.288
 texture = ExtResource("2_yncif")
 expand_mode = 1
 
 [node name="SceneLoadPanel" type="Panel" parent="WorkTexture" unique_id=1268484746]
 self_modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 54.0
-offset_top = 107.0
-offset_right = 468.0
-offset_bottom = 628.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.102000006
+anchor_top = 0.154
+anchor_right = 0.102000006
+anchor_bottom = 0.15900001
+offset_left = 0.14399719
+offset_top = 0.310997
+offset_right = 369.14398
+offset_bottom = 482.311
