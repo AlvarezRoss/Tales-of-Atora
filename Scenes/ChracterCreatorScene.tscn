@@ -1,18 +1,18 @@
-[gd_scene format=3 uid="uid://b4jixpxwsnyfs"]
+[gd_scene format=3 uid="uid://cj5kgwoga6v1l"]
 
-[ext_resource type="Script" uid="uid://gj5bqladd8ls" path="res://Scripts/ClassAndRace.cs" id="1_e3orl"]
-[ext_resource type="Texture2D" uid="uid://f6fyh873svr2" path="res://Assets/GUI/Game Menu/1x/Asset 1 - 1080p.png" id="1_mlw5q"]
-[ext_resource type="Texture2D" uid="uid://cxf3opo6vn5nu" path="res://Assets/GUI/Game Menu/1x/Asset 15 - 1080p.png" id="2_yncif"]
-[ext_resource type="Texture2D" uid="uid://cbo40reqgefii" path="res://Assets/GUI/Game Menu/1x/Asset 8 - 1080p.png" id="3_misun"]
+[ext_resource type="Script" uid="uid://gj5bqladd8ls" path="res://Scripts/ClassAndRace.cs" id="1_yyofv"]
+[ext_resource type="Texture2D" uid="uid://f6fyh873svr2" path="res://Assets/GUI/Game Menu/1x/Asset 1 - 1080p.png" id="2_wsdj2"]
+[ext_resource type="Texture2D" uid="uid://cxf3opo6vn5nu" path="res://Assets/GUI/Game Menu/1x/Asset 15 - 1080p.png" id="3_0rew2"]
+[ext_resource type="Texture2D" uid="uid://cbo40reqgefii" path="res://Assets/GUI/Game Menu/1x/Asset 8 - 1080p.png" id="4_7pjrv"]
 
-[node name="Control" type="Control" unique_id=1078944297]
+[node name="CharacterCreatorScene" type="Control" unique_id=1078944297]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_e3orl")
+script = ExtResource("1_yyofv")
 
 [node name="Panel" type="Panel" parent="." unique_id=388982643]
 layout_mode = 1
@@ -28,7 +28,7 @@ offset_left = -234.0
 offset_top = -89.0
 offset_right = 1366.0
 offset_bottom = 783.0
-texture = ExtResource("1_mlw5q")
+texture = ExtResource("2_wsdj2")
 expand_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=747945287]
@@ -37,13 +37,13 @@ offset_left = 614.0
 offset_top = -36.0
 offset_right = 1142.0
 offset_bottom = 635.0
-texture = ExtResource("2_yncif")
+texture = ExtResource("3_0rew2")
 expand_mode = 1
 
 [node name="RaceSprite" type="Sprite2D" parent="." unique_id=1881093938]
 position = Vector2(877, 141)
 scale = Vector2(0.80716723, 1)
-texture = ExtResource("3_misun")
+texture = ExtResource("4_7pjrv")
 
 [node name="RaceButton" type="Button" parent="RaceSprite" unique_id=551780428]
 anchors_preset = 8
@@ -63,7 +63,7 @@ flat = true
 [node name="ClassSprite" type="Sprite2D" parent="." unique_id=531079175]
 position = Vector2(877, 219)
 scale = Vector2(0.80716723, 1)
-texture = ExtResource("3_misun")
+texture = ExtResource("4_7pjrv")
 
 [node name="ClassButton" type="Button" parent="ClassSprite" unique_id=893152456]
 anchors_preset = 8
@@ -83,7 +83,7 @@ flat = true
 [node name="ContinueSprite" type="Sprite2D" parent="." unique_id=1118429108]
 position = Vector2(880, 494)
 scale = Vector2(0.7056314, 1)
-texture = ExtResource("3_misun")
+texture = ExtResource("4_7pjrv")
 
 [node name="ContinueButton" type="Button" parent="ContinueSprite" unique_id=322851835]
 anchors_preset = 8
@@ -103,7 +103,7 @@ flat = true
 [node name="StatsSprite" type="Sprite2D" parent="." unique_id=1482342161]
 position = Vector2(877, 297)
 scale = Vector2(0.80716723, 1)
-texture = ExtResource("3_misun")
+texture = ExtResource("4_7pjrv")
 
 [node name="StatsButton" type="Button" parent="StatsSprite" unique_id=109714617]
 anchors_preset = 8
@@ -120,12 +120,12 @@ grow_vertical = 2
 text = "Stats"
 flat = true
 
-[node name="AppereanceSprite" type="Sprite2D" parent="." unique_id=1935637739]
+[node name="AppearanceSprite" type="Sprite2D" parent="." unique_id=1935637739]
 position = Vector2(877, 376)
 scale = Vector2(0.80716723, 1)
-texture = ExtResource("3_misun")
+texture = ExtResource("4_7pjrv")
 
-[node name="ApperanceButton" type="Button" parent="AppereanceSprite" unique_id=1016173808]
+[node name="AppearanceButton" type="Button" parent="AppearanceSprite" unique_id=1016173808]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -152,7 +152,7 @@ offset_left = -0.51200104
 offset_top = 0.288002
 offset_right = 527.488
 offset_bottom = 671.288
-texture = ExtResource("2_yncif")
+texture = ExtResource("3_0rew2")
 expand_mode = 1
 
 [node name="SceneLoadPanel" type="Panel" parent="WorkTexture" unique_id=1268484746]
