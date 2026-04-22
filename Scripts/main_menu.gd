@@ -1,6 +1,6 @@
 extends Control
 
-var stat_roll_scene: PackedScene = ResourceLoader.load("res://Scenes/stat_roll.tscn")
+var stat_roll_scene: PackedScene = ResourceLoader.load("res://Scenes/ChracterCreatorScene.tscn")
 var newCharacterButton: Button = null
 var quitButton: Button = null
 # Called when the node enters the scene tree for the first time.
