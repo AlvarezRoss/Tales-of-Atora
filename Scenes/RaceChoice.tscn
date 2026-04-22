@@ -1,14 +1,16 @@
 [gd_scene format=3 uid="uid://bf2r3s67oj224"]
 
+[ext_resource type="Script" uid="uid://dntguos838dro" path="res://Scripts/race_choice.gd" id="1_asdqb"]
 [ext_resource type="Texture2D" uid="uid://cbo40reqgefii" path="res://Assets/GUI/Game Menu/1x/Asset 8 - 1080p.png" id="1_nhljp"]
 
-[node name="Control" type="Control" unique_id=131510360]
+[node name="RaceChoice" type="Control" unique_id=131510360]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_asdqb")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=129273989]
 
@@ -16,11 +18,11 @@ grow_vertical = 2
 self_modulate = Color(1, 1, 1, 0)
 anchors_preset = -1
 anchor_left = 0.102000006
-anchor_top = 0.15900001
+anchor_top = 0.147
 anchor_right = 0.102000006
 anchor_bottom = 0.15900001
 offset_left = 39.495995
-offset_top = -7.689003
+offset_top = 0.087005615
 offset_right = 408.496
 offset_bottom = 477.666
 
@@ -68,3 +70,6 @@ offset_right = 180.5
 offset_bottom = 82.349
 grow_horizontal = 2
 grow_vertical = 2
+
+[connection signal="pressed" from="CanvasLayer/SceneLoadPanel/ElfButtonSprite/Button" to="." method="_on_elf_select_button_pressed"]
+[connection signal="button_down" from="CanvasLayer/SceneLoadPanel/HumanButtonSprite/Button" to="." method="_on_human_select_button_down"]
