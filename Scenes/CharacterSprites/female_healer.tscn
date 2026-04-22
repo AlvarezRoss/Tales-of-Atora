@@ -707,7 +707,7 @@ animations = [{
 
 [node name="FemaleHealer" type="AnimatedSprite2D" unique_id=1860663526]
 sprite_frames = SubResource("SpriteFrames_mhbal")
-animation = &"WalkingUp"
+animation = &"WalkingLeft"
 autoplay = "IdleDown"
 
 [node name="Portrait" type="Sprite2D" parent="." unique_id=1163639231]
