@@ -3,6 +3,7 @@ using System;
 
 public partial class StatScene : Control
 {
+    ClassAndRace characterCreatorScene;
     Button rollForStatsButton;
     GridContainer statGrid;
     CanvasLayer canvas;
@@ -50,7 +51,8 @@ public partial class StatScene : Control
         rollForStatsButton = sceneLoadPanel.GetNode<Button>("RollForStats");
         statGrid = sceneLoadPanel.GetNode<GridContainer>("StatGridContainer");
         rollForStatsButton.ButtonDown += RollForStats;
-
+        characterCreatorScene = GetTree().Root.GetNode<ClassAndRace>("CharacterCreatorScene");
+        
 
         /*Gets pointer to Ability Score Labels*/
         strLabel = statGrid.GetNode<Panel>("StrValuePanel").GetNode<Label>("StrValueLabel");
@@ -111,6 +113,7 @@ public partial class StatScene : Control
         for (int i = 0; i < labels.Length; i++)
         {
             labels[i].Text = randomNumGen.Next(4, 16).ToString();
+            characterCreatorScene.statValues[i] = labels[i].Text.ToInt(); // Updates parent scene stat values array
         }
         ResetButtons(); // Resets buttons before renabling them
         EnableButtons();
@@ -170,6 +173,7 @@ public partial class StatScene : Control
         else newScore = previousScore - bonus;
         
         labels[buttonIndex].Text = newScore.ToString();
+        characterCreatorScene.statValues[buttonIndex] = newScore;
     }
     private void UpdateButtonStatus(bool toggled, Button buttonPressed, Button[]buttonArray)
     {
