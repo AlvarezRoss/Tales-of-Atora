@@ -1,0 +1,31 @@
+{
+  "$schema": "./CharacterJson.Schema.json",
+  "Elfs": [
+    {
+      "name": "FemaleElfArcher",
+      "race": "Elf",
+      "portrait": "res://Assets/Female_ArcherElven/Female_ArcherElven_Bust 1.png",
+      "AnimatedSprite": "res://Scenes/CharacterSprites/female_elf_archer.tscn"
+    },
+    {
+      "name": "FemaleElfMage",
+      "race": "Elf",
+      "portrait": "res://Assets/Female_4/Medieval_Interiors_Premade_Female_4_Bust.png",
+      "AnimatedSprite": "res://Scenes/CharacterSprites/female_mage.tscn"
+    }
+  ],
+  "Humans": [
+    {
+      "name": "MaleHumanRogue",
+      "race": "Human",
+      "portrait": "res://Assets/Male_5/Medieval_Interiors_Premade_Male_5_Bust.png",
+      "AnimatedSprite": "res://Scenes/CharacterSprites/male_rogue.tscn",
+    },
+    {
+      "name": "FemaleHumanCleric",
+      "race": "Human",
+      "portrait": "res://Assets/Female_1/Medieval_Interiors_Premade_Female_1_Bust.png",
+      "AnimatedSprite": "res://Scenes/CharacterSprites/female_healer.tscn"
+    }
+  ]
+}

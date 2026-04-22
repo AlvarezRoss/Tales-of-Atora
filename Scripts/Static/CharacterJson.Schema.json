@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "CharacterJsonSchema.json",
+  "title": "CharacterCollection",
+
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "Elfs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "race": { "type": "string" },
+          "portrait": { "type": "string" },
+          "AnimatedSprite": { "type": "string" }
+        },
+        "required": [ "name", "race", "portrait", "AnimatedSprite" ],
+        "additionalProperties": false
+      }
+    },
+    "Humans": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "race": { "type": "string" },
+          "portrait": { "type": "string" },
+          "AnimatedSprite": { "type": "string" }
+        },
+        "required": [ "name", "race", "portrait", "AnimatedSprite" ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [ "Elfs", "Humans" ],
+  "additionalProperties": false
+}
