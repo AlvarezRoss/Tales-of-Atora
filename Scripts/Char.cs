@@ -11,13 +11,14 @@ public partial class Char : CharacterBody2D
 	public bool selected; // Bool used to indentify which NPCs are selected and which aren't
 	bool moving;
 	Area2D clickArea;
-	Stats stats;
+	Stats? stats;
 	AnimatedSprite2D animatedSprite;
 	SpriteFrames frames;
 	Directions movementDirection;
 	Directions lastDirection;
-	public void Init(Stats stats, SpriteFrames frames)
+	public void Init(Stats? stats, SpriteFrames frames)
 	{
+		// TODO - Default for testing
 		this.frames = frames;
 		this.stats = stats;
 	}
@@ -25,11 +26,12 @@ public partial class Char : CharacterBody2D
 	{
 		clickArea = GetNode<Area2D>("ClickArea");
         clickArea.InputEvent += _on_click_area_input_event;
+		Init(null, null);
 		animatedSprite = GetNode<AnimatedSprite2D>("CharSprite");
 		animatedSprite.SpriteFrames = frames;
     }
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	
 
 	public enum Directions
 	{
@@ -43,6 +45,8 @@ public partial class Char : CharacterBody2D
 		LeftDown,
 		RightDown
 	}
+
+    // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _PhysicsProcess(double delta)
     {
         base._PhysicsProcess(delta);
@@ -87,38 +91,7 @@ public partial class Char : CharacterBody2D
 	{
 		if (movementDirection == Directions.Idle) IdleAnimations();
 
-		if (movementDirection == Directions.LeftUp && animatedSprite.Animation != "WalkingLeftUp")
-		{
-			animatedSprite.Play("WalkingLeftUp");
-		}
-		else if (movementDirection == Directions.LeftDown && animatedSprite.Animation != "WalkingLeftDown")
-		{
-			animatedSprite.Play("WalkingLeftDown");
-		}
-		else if (movementDirection == Directions.Left && animatedSprite.Animation != "WalkingLeft")
-		{
-			animatedSprite.Play("WalkingLeft");
-		}
-		else if (movementDirection == Directions.Right && animatedSprite.Animation != "WalkingRight")
-		{
-			animatedSprite.Play("WalkingRight");
-		}
-		else if (movementDirection == Directions.RightDown && animatedSprite.Animation != "WalkingRightDown")
-		{
-			animatedSprite.Play("WalkingRightDown");
-		}
-		else if (movementDirection == Directions.RightUp && animatedSprite.Animation != "WalkingRightUp")
-		{
-			animatedSprite.Play("WalkingRightUp");
-		}
-		else if (movementDirection == Directions.Up && animatedSprite.Animation != "WalkingUp")
-		{
-			animatedSprite.Play("WalkingUp");
-		}
-		else if (movementDirection == Directions.Down && animatedSprite.Animation != "WalkingDown")
-		{
-			animatedSprite.Play("WalkingDown");
-		}
+		// TODO - WALKING ANIMATIONS
 	}
 
 	private Directions GetDirection()
