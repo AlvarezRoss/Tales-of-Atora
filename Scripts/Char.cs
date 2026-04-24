@@ -31,7 +31,8 @@ public partial class Char : CharacterBody2D
 		animatedSprite.SpriteFrames = frames;
     }
 
-	
+
+
 
 	public enum Directions
 	{
