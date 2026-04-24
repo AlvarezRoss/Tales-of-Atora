@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Runtime.CompilerServices;
 [GlobalClass]
 public partial class Char : CharacterBody2D
 {
@@ -18,18 +19,22 @@ public partial class Char : CharacterBody2D
 	Directions lastDirection;
 	public void Init(Stats? stats, SpriteFrames frames)
 	{
-		// TODO - Default for testing
 		this.frames = frames;
 		this.stats = stats;
+		if (stats == null)
+		{
+			stats = new Stats(0, 0, 0, 0, 0, 0);
+		} //Default stats for testing
 	}
+
 	public override void _Ready()
 	{
 		clickArea = GetNode<Area2D>("ClickArea");
-        clickArea.InputEvent += _on_click_area_input_event;
+		clickArea.InputEvent += _on_click_area_input_event;
 		Init(null, null);
 		animatedSprite = GetNode<AnimatedSprite2D>("CharSprite");
 		animatedSprite.SpriteFrames = frames;
-    }
+	}
 
 
 
@@ -47,37 +52,37 @@ public partial class Char : CharacterBody2D
 		RightDown
 	}
 
-    // Called every frame. 'delta' is the elapsed time since the previous frame.
-    public override void _PhysicsProcess(double delta)
-    {
-        base._PhysicsProcess(delta);
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _PhysicsProcess(double delta)
+	{
+		base._PhysicsProcess(delta);
 		Velocity = Position.DirectionTo(movementTarget) * speed;
 		if (Position.DistanceTo(movementTarget) > 20 && moving)
 		{
 			lastDirection = movementDirection;
 			MoveAndSlide();
-			
+
 		}
 		else
 		{
 			movementDirection = Directions.Idle;
 			moving = false;
-			
+
 		}
 
-        Animation();
-    }
+		Animation();
+	}
 
-    public override void _Input(InputEvent @event)
-    {
-        base._Input(@event);
+	public override void _Input(InputEvent @event)
+	{
+		base._Input(@event);
 		if (@event.IsActionPressed("RightClick") && selected)
 		{
 			moving = true;
 			movementTarget = GetGlobalMousePosition();
-            movementDirection = GetDirection(); // We do it here to set the movement direction once
-        }
-    }
+			movementDirection = GetDirection(); // We do it here to set the movement direction once
+		}
+	}
 
 	private void _on_click_area_input_event(Node viewport, InputEvent @event, long shape_idx)
 	{
@@ -85,7 +90,7 @@ public partial class Char : CharacterBody2D
 		{
 			selected = true;
 		}
-			
+
 	}
 
 	public virtual void Animation()
@@ -129,7 +134,7 @@ public partial class Char : CharacterBody2D
 
 	private void IdleAnimations()
 	{
-		switch(lastDirection)
+		switch (lastDirection)
 		{
 			case Directions.LeftUp:
 				animatedSprite.Play("IdleLeftUp");
